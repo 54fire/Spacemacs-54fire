@@ -2,10 +2,39 @@
 
 I love Spacemacs,it very nice!
 
+## recentf
+1. 使用`SPC f r`进入recentf mode
+    - `C-n` 向下移动
+    - `C-p` 向上移动 
+
+## Neotree
+1. 打开与关闭操作：
+    - `SPC f t` 打开和关闭
+2. 使用帮助
+    - `?` 打开Neotree的帮助页面
+3. 基础操作
+    - `h` 合并目录
+    - `j` 向下移动
+    - `k` 向上移动
+    - `l` 展开目录，如果是文档将打开
+
+## Windows
+1. 分屏操作：
+    - `SPC w s` or `SPC w /` 竖直分屏
+    - `SPC w v` or `SPC w -` 水平分屏
+    
+2. 光标在window中的切换
+    - `SPC w h` 光标切换到左窗口
+    - `SPC w j` 光标切换到下窗口
+    - `SPC w k` 光标切换到上窗口
+    - `SPC w l` 光标切换到右窗口
+3. 删除当前光标所在窗口
+    - `SPC w d` 删除当前光标所在窗口
+
 ## Dired-mode
 1. Dired Mode 是一个强大的模式它能让我们完成和文件管理相关的所有操作。
 
-2. 使用`C-x d`就可以进入Dired Mode，其常用操作如下：
+2. 使用`C-x d` or `SPC j d`就可以进入Dired Mode，其常用操作如下：
   - `+` 创建目录
   - `g` 刷新目录
   - `C` 拷贝
@@ -35,7 +64,7 @@ I love Spacemacs,it very nice!
       ```
       使用延迟加载可以使编辑器加载速度有所提升。
 
-    3. 启用 dired-x 可以让每一次进入 Dired 模式时，使用新的快捷键 C-x C-j 就可以进 入当前文件夹的所在的路径。
+    3. 启用 dired-x 可以让每一次进入 Dired 模式时，使用新的快捷键 `C-x C-j` 就可以进 入当前文件夹的所在的路径。
       ```lisp
       (require 'dired-x)
       ```
