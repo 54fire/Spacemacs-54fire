@@ -332,8 +332,8 @@ you should place your code here."
      ;; 延迟加载 使用延迟加载可以使编辑器加载速度有所提升.
      (with-eval-after-load 'dired
        (define-key dired-mode-map (kbd "o") 'dired-find-alternate-file))
-     (require 'dired-x)
-     (setq dired-dwin-target 1)
+     (require 'dired-x)   ;; C-x C-j 进入当前文件夹
+     (setq dired-dwin-target 1)  ;; 当存在双分屏时，另一个将作为拷贝目录
 
      ;;解决org表格里面中英文对齐的问题
      (when (configuration-layer/layer-usedp 'chinese)
