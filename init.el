@@ -321,9 +321,36 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-     (setq powerline-default-separator 'arrow)
-  )
+     (setq powerline-default-separator 'arrow-fade)
 
+     ;; Setting Dired-mode
+     (put 'dired-find-alternate-file 'disabled nil)
+     ;; 主动加载 Dired Mode
+     ;; (require 'dired)
+     ;; (defined-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
+
+     ;; 延迟加载 使用延迟加载可以使编辑器加载速度有所提升.
+     (with-eval-after-load 'dired
+       (define-key dired-mode-map (kbd "o") 'dired-find-alternate-file))
+     (require 'dired-x)
+     (setq dired-dwin-target 1)
+
+     ;;解决org表格里面中英文对齐的问题
+     (when (configuration-layer/layer-usedp 'chinese)
+       (when (and (spacemacs/system-is-mac) window-system)
+         (spacemacs//set-monospaced-font "Source Code Pro" "Hiragino Sans GB" 14 16)))
+
+     ;; Setting Chinese Font
+     (when (and (spacemacs/system-is-mswindows) window-system)
+       (setq ispell-program-name "aspell")
+       (setq w32-pass-alt-to-system nil)
+       (setq w32-apps-modifier 'super)
+       (dolist (charset '(kana han symbol cjk-misc bopomofo))
+         (set-fontset-font (frame-parameter nil 'font)
+                           charset
+                           (font-spec :family "Microsoft Yahei" :size 14))))
+     ;; 
+)
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables

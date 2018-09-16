@@ -1,2 +1,42 @@
 <h1 align="center"> 54fire‘s Spacemacs config </h1>
 
+I love Spacemacs,it very nice!
+
+## Dired-mode
+1. Dired Mode 是一个强大的模式它能让我们完成和文件管理相关的所有操作。
+
+2. 使用`C-x d`就可以进入Dired Mode，其常用操作如下：
+  - `+` 创建目录
+  - `g` 刷新目录
+  - `C` 拷贝
+  - `D` 删除
+  - `R` 重命名
+  - `d` 标记删除
+  - `u` 取消标记
+  - `x` 执行所以标记
+
+3. 这里有几点可以优化的地方。
+    1. 第一是删除目录的时候 Emacs 会询问是否递归删除或拷贝， 这也有些麻烦我们可以用下面的配置将其设定为默认递归删除目录（出于安全原因的考虑， 也许你需要保持此行为。所有文中的配置请务必按需配置）。
+      ```lisp
+      (setq dired-recursive-deletes 'always)
+      (setq dired-recursive-copies 'always)
+      ```
+
+    2. 第二是每一次你进入一个回车进入一个新的目录中，一个新的缓冲区就会被建立。这使得我们的缓冲区列表中充满了大量没有实际意义的记录。我们可以使用下面的代码，让 Emacs 重用唯一的一个缓冲区作为Dired Mode显示专用缓冲区。
+      ```lisp
+      (put 'dired-find-alternate-file 'disabled nil)
+      ;; 主动加载 Dired Mode
+      ;; (require 'dired)
+      ;; (defined-key dired-mode-map (kbd "o") 'dired-find-alternate-file)
+
+      ;; 延迟加载.点击o键就可以打开目录。。(根据个人习惯设置)
+      (with-eval-after-load 'dired
+          (define-key dired-mode-map (kbd "o") 'dired-find-alternate-file))
+      ```
+      使用延迟加载可以使编辑器加载速度有所提升。
+
+    3. 启用 dired-x 可以让每一次进入 Dired 模式时，使用新的快捷键 C-x C-j 就可以进 入当前文件夹的所在的路径。
+      ```lisp
+      (require 'dired-x)
+      ```
+    4. 使用 `(setq dired-dwin-target 1)` 则可以使当一个窗口（frame）中存在两个分屏 （window）时，将另一个分屏自动设置成拷贝地址的目标。
