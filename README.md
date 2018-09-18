@@ -2,6 +2,37 @@
 
 I love Spacemacs,it very nice!
 
+## w3m emms
+1. w3m 用于在emacs中浏览网页。
+    - 在mac中先安装w3m
+        ```
+        brew install w3m
+        ```
+    - 在emacs中安装w3m的package。
+2. emms 用于在emacs中播放音乐或者视频
+    - 在mac中先安装mplayer
+      ```
+      brew install mplayer
+      ```
+    - 在emacs中安装emms的package.
+
+## PDF
+1. 使用插件pdf-tools
+    - 安装插件后再配置文件中键入`(pdf-tools-install)`
+2. 其中要关闭global-linum-mode,否则可能导致emacs崩溃。
+3. 使用Spacemacs可以将配置修改为：
+  ```lisp
+  dotspacemacs-line-numbers '(:disabled-for-modes dired-mode
+                                                  doc-view-mode
+                                                  markdown-mode
+                                                  org-mode
+                                                  pdf-view-mode
+                             )
+  ```
+4. 命令行:  
+    - `M-x pdf-tools-help RET` 打开pdf-tools的帮助页面
+    - `M-x pdf-tools-customize RET` 打开自定义页面
+    
 ## recentf
 1. 使用`SPC f r`进入recentf mode
     - `C-n` 向下移动
