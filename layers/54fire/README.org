@@ -1,14 +1,14 @@
 #+TITLE: fire layer
 
 # The maximum height of the logo should be 200 pixels.
-[[img/fire.png]]
-
+[[img/54fire.jpg]]
 
 # TOC links should be GitHub style anchors.
 * Table of Contents                                        :TOC_4_gh:noexport:
 - [[#description][Description]]
 - [[#install][Install]]
 - [[#key-bindings][Key bindings]]
+- [[#img54firejpg][img/54fire.jpg]]
 
 * Description
 This layer does wonderful things:
@@ -29,3 +29,5 @@ file.
 # [[https://github.com/syl20bnr/spacemacs/blob/master/doc/VIMUSERS.org#sessions]]
 # [[https://github.com/syl20bnr/spacemacs/blob/master/layers/%2Bfun/emoji/README.org][Link to Emoji layer README.org]]
 # If space-doc-mode is enabled, Spacemacs will open a local copy of the linked file.
+
+* img/54fire.jpg
