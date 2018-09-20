@@ -31,8 +31,6 @@
 
 (defconst 54fire-packages
   '(youdao-dictionary
-    multiple-cursors
-    ;; w3m
     )
   "The list of Lisp packages required by the fire layer.
 
@@ -66,21 +64,6 @@ Each entry is either:
     :init
     (spacemacs/set-leader-keys "yo" 'youdao-dictionary-search-at-point+)
     (spacemacs/set-leader-keys "yd" 'youdao-dictionary-search-at-point)))
-
-(defun 54fire/init-multiple-cursors()
-  (use-package multiple-cursors
-               :init
-               (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-               (global-set-key (kbd "M-j") 'mc/mark-next-like-this)
-               (global-set-key (kbd "M-k") 'mc/mark-previous-like-this)
-               (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-               (global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click)))
-
-;; (defun 54fire/init-w3m()
-  ;; (use-package w3m
-               ;; :init
-               ;; (add-to-list 'exec-path "~/.emacs.d/elpa/")
-               ;; ))
 
 ;; packages.el ends here
 
