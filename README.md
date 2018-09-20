@@ -2,16 +2,25 @@
 
 I love Spacemacs,it very nice!
 
+## Install
+先安装spacemacs,然后Git我的仓库到.spacemacs.d目录
+  ```sh
+  # clone spacemacs repo and use develop branch
+  git clone https://github.com/syl20bnr/spacemacs.git ~/.emacs.d -b develop
+  # clone my repostory 
+  git clone https://github.com/54fire/spacemacs-54fire.git ~/.spacemacs.d/
+  ```
+
 ## w3m emms
 1. w3m 用于在emacs中浏览网页。
     - 在mac中先安装w3m
-        ```
+        ```sh
         brew install w3m
         ```
     - 在emacs中安装w3m的package。
 2. emms 用于在emacs中播放音乐或者视频
     - 在mac中先安装mplayer
-      ```
+      ```sh
       brew install mplayer
       ```
     - 在emacs中安装emms的package.
@@ -19,6 +28,7 @@ I love Spacemacs,it very nice!
 ## PDF
 1. 使用插件pdf-tools
     - 安装插件后再配置文件中键入`(pdf-tools-install)`
+    - 由于上述配置会编译，而在打开时将耗费大量时间。故而我将其设置快捷键<f2>.从而我们将使用pdf。用<f2>打开pdf-tools模式
 2. 其中要关闭global-linum-mode,否则可能导致emacs崩溃。
 3. 使用Spacemacs可以将配置修改为：
   ```lisp
